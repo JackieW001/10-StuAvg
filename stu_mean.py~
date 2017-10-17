@@ -1,0 +1,13 @@
+import sqlite3
+import csv
+
+db_name = "discobandit.db"
+db = sqlite3.connect(db_name)
+c = db.cursor()
+
+command = "SELECT name, mark FROM peeps, courses WHERE peeps.id = courses.id"
+c.execute(command)
+
+
+db.commit()
+db.close()
